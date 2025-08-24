@@ -1,7 +1,12 @@
 [project]
-name = "assignment1"
+name = "tdt4172-ml-assignments"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+description = "TDT4172 Introduction to Machine Learning - Assignments"
+readme = "assignment_1/README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.10.5",
+    "numpy>=2.3.2",
+    "pandas>=2.3.1",
+    "scikit-learn>=1.7.1",
+]
