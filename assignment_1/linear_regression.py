@@ -47,6 +47,7 @@ class LinearRegression:
             self.losses.append(loss)
 
 
+
     
     def predict(self, X):
         """
