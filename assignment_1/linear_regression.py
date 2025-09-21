@@ -1,12 +1,31 @@
 import numpy as np
 
-class LinearRegression():
+class LinearRegression:
     
-    def __init__(self):
-        # NOTE: Feel free to add any hyperparameters 
-        # (with defaults) as you see fit
-        pass
+    def __init__(self, learning_rate=0.01, epochs=10):
+        self.epochs = epochs
+        self.weights = None
+        self.bias = None
+        self.learning_rate = learning_rate
+        self.losses = []
+    
+    def _linear_model(self, X):
+        return np.dot(X, self.weights) + self.bias
+
+    def _MSE(self, y, y_pred):
+        N = len(y)
+        return (1 / (2 * N)) * np.sum((y - y_pred) ** 2)
         
+    def _compute_gradients(self, X, y, y_pred):
+        N = len(y_pred)
+        grad_w = (1 / N) * np.dot(X.T, (y_pred - y))
+        grad_b = np.mean(y_pred - y)
+        return grad_w, grad_b
+
+    def _update_parameters(self, grad_w, grad_b):
+        self.bias -= self.learning_rate * grad_b
+        self.weights -= self.learning_rate * grad_w
+
     def fit(self, X, y):
         """
         Estimates parameters for the classifier
@@ -16,8 +35,18 @@ class LinearRegression():
                 m rows (#samples) and n columns (#features)
             y (array<m>): a vector of floats
         """
-        # TODO: Implement
-        raise NotImplementedError("The fit method is not implemented yet.")
+        self.weights = np.zeros(X.shape[1])
+        self.bias = 0
+
+        for _ in range(self.epochs):
+            y_pred = self._linear_model(X)
+            grad_w, grad_b = self._compute_gradients(X, y, y_pred)
+            self._update_parameters(grad_w, grad_b)
+
+            loss = self._MSE(y, y_pred)
+            self.losses.append(loss)
+
+
     
     def predict(self, X):
         """
@@ -32,8 +61,7 @@ class LinearRegression():
         Returns:
             A length m array of floats
         """
-        # TODO: Implement
-        raise NotImplementedError("The predict method is not implemented yet.")
+        return self._linear_model(X)
 
 
 
