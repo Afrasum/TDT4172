@@ -1,8 +1,8 @@
 import numpy as np
 
 class LinearRegression:
-    
-    def __init__(self, learning_rate=0.01, epochs=10):
+
+    def __init__(self, learning_rate=0.000001, epochs=10000):
         self.epochs = epochs
         self.weights = None
         self.bias = None
