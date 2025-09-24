@@ -5,6 +5,7 @@ description = "TDT4172 Introduction to Machine Learning - Assignments"
 readme = "assignment_1/README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "catboost>=1.2.8",
     "linear-regression>=0.1",
     "matplotlib>=3.10.5",
     "numpy>=2.3.2",
@@ -12,4 +13,5 @@ dependencies = [
     "scikit-learn>=1.7.1",
     "seaborn>=0.13.2",
     "tree>=0.2.4",
+    "xgboost>=3.0.5",
 ]
