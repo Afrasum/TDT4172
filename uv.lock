@@ -267,6 +267,19 @@ wheels = [
 ]
 
 [[package]]
+name = "linear-regression"
+version = "0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pandas" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e5/c3/792576fd8382e34f62ca3a10f365b49cfda053e3ccb5a75925e793c7adb1/linear_regression-0.1.tar.gz", hash = "sha256:44782acade4346769d4c5c7ce13244e71490f3a634fb400d596d444e53b39fd1", size = 2861, upload-time = "2017-08-20T19:49:14.631Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/da/db/c3ca11934745d6d9f6ff91f9ac57176a768908a5eda32c7fb17423f61323/linear_regression-0.1-py3-none-any.whl", hash = "sha256:8ee21693372a33942b4eb0a05fe37982f8edfd8c3d5ad93fbd4e4fc1787008ca", size = 4265, upload-time = "2017-08-20T19:49:13.247Z" },
+]
+
+[[package]]
 name = "matplotlib"
 version = "3.10.5"
 source = { registry = "https://pypi.org/simple" }
@@ -675,6 +688,20 @@ wheels = [
 ]
 
 [[package]]
+name = "seaborn"
+version = "0.13.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "pandas" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/86/59/a451d7420a77ab0b98f7affa3a1d78a313d2f7281a57afb1a34bae8ab412/seaborn-0.13.2.tar.gz", hash = "sha256:93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7", size = 1457696, upload-time = "2024-01-25T13:21:52.551Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl", hash = "sha256:636f8336facf092165e27924f223d3c62ca560b1f2bb5dff7ab7fad265361987", size = 294914, upload-time = "2024-01-25T13:21:49.598Z" },
+]
+
+[[package]]
 name = "setuptools"
 version = "80.9.0"
 source = { registry = "https://pypi.org/simple" }
@@ -706,19 +733,23 @@ name = "tdt4172-ml-assignments"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "linear-regression" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "scikit-learn" },
+    { name = "seaborn" },
     { name = "tree" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "linear-regression", specifier = ">=0.1" },
     { name = "matplotlib", specifier = ">=3.10.5" },
     { name = "numpy", specifier = ">=2.3.2" },
     { name = "pandas", specifier = ">=2.3.1" },
     { name = "scikit-learn", specifier = ">=1.7.1" },
+    { name = "seaborn", specifier = ">=0.13.2" },
     { name = "tree", specifier = ">=0.2.4" },
 ]
 

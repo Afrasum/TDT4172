@@ -5,9 +5,11 @@ description = "TDT4172 Introduction to Machine Learning - Assignments"
 readme = "assignment_1/README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "linear-regression>=0.1",
     "matplotlib>=3.10.5",
     "numpy>=2.3.2",
     "pandas>=2.3.1",
     "scikit-learn>=1.7.1",
+    "seaborn>=0.13.2",
     "tree>=0.2.4",
 ]
